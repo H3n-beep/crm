@@ -1,5 +1,25 @@
 @import 'frappe-ui/style.css';
 
+/* Import Vazirmatn Persian Font */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+:root {
+  /* Override the default font family globally for Persian support */
+  --font-sans: 'Vazirmatn', sans-serif;
+  --default-font-family: var(--font-sans);
+}
+
+body {
+  font-family: var(--font-sans) !important;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Override Inter font if hardcoded anywhere */
+.font-inter, .inter, [class*='font-inter'] {
+  font-family: var(--font-sans) !important;
+}
+
 @layer components {
   .prose-f {
     @apply break-all

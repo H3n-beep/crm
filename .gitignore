@@ -1,27 +1,102 @@
-.DS_Store
-*.pyc
-*.egg-info
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Environment variables
+.env
+.env.local
+.env.*
+!.*.env
+
+# Dependencies
+node_modules/
+julia-*/
+zig*/
+
+# Build outputs
+target/
+build/
+dist/
+*.min.js
+*.min.css
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
 *.swp
-__pycache__
-dev-dist
-tags
-node_modules
-crm/public/frontend
-crm/www/crm.html
-build
-frontend/coverage
+*.swo
+*.tmp
 
-e2e/.auth
-test-results
-playwright-report
-package-lock.json
+# OS
+.DS_Store
+Thumbs.db
 
-.vscode
-.github/instructions
-.github/skills
-.github/copilot-instructions.md
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
 
-CLAUDE.md
-AGENTS.md
-.claude
-.pi
+# PyTest
+.pytest_cache/
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```
