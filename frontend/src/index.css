@@ -3,21 +3,40 @@
 /* Import Vazirmatn Persian Font */
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
 
-:root {
-  /* Override the default font family globally for Persian support */
-  --font-sans: 'Vazirmatn', sans-serif;
-  --default-font-family: var(--font-sans);
-}
+@layer base {
+  :root {
+    /* Define CSS variables for consistency with Tailwind config */
+    --color-akolade-primary: #0F172A;
+    --color-akolade-accent: #6366F1;
+    --font-family-vazir: 'Vazirmatn', sans-serif;
+    
+    /* Override the default font family globally for Persian support */
+    --font-sans: var(--font-family-vazir);
+    --default-font-family: var(--font-sans);
+  }
 
-body {
-  font-family: var(--font-sans) !important;
-  direction: rtl;
-  text-align: right;
-}
+  body {
+    font-family: var(--font-family-vazir) !important;
+    direction: rtl;
+    text-align: right;
+    background-color: #F8FAFC; /* Akolade Background */
+    color: #0F172A; /* Akolade Primary Text */
+    
+    /* Smooth rendering for fonts */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* Override Inter font if hardcoded anywhere */
-.font-inter, .inter, [class*='font-inter'] {
-  font-family: var(--font-sans) !important;
+  /* Override Inter font if hardcoded anywhere */
+  .font-inter, .inter, [class*='font-inter'], [style*="font-family: 'Inter'"] {
+    font-family: var(--font-family-vazir) !important;
+  }
+
+  /* Ensure inputs and form elements respect RTL */
+  input, textarea, select {
+    text-align: right;
+    font-family: var(--font-family-vazir) !important;
+  }
 }
 
 @layer components {
