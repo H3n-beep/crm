@@ -146,6 +146,7 @@ import Link from '@/components/Controls/Link.vue'
 import { usersStore } from '@/stores/users'
 import { copy } from '@/utils'
 import { getLastXDays, formatter, formatRange } from '@/utils/dashboard'
+import { toPersianNum } from '@/utils/numbers'
 import {
   usePageMeta,
   createResource,
@@ -161,7 +162,7 @@ const editing = ref(false)
 
 const showDatePicker = ref(false)
 const datePickerRef = ref(null)
-const preset = ref('Last 30 Days')
+const preset = ref('۳۰ روز گذشته')
 const showAddChartModal = ref(false)
 
 const filters = reactive({
@@ -191,33 +192,33 @@ const options = computed(() => [
     hideLabel: true,
     items: [
       {
-        label: __('Last 7 Days'),
+        label: __('۷ روز گذشته'),
         onClick: () => {
-          preset.value = 'Last 7 Days'
+          preset.value = '۷ روز گذشته'
           filters.period = getLastXDays(7)
           dashboardItems.reload()
         },
       },
       {
-        label: __('Last 30 Days'),
+        label: __('۳۰ روز گذشته'),
         onClick: () => {
-          preset.value = 'Last 30 Days'
+          preset.value = '۳۰ روز گذشته'
           filters.period = getLastXDays(30)
           dashboardItems.reload()
         },
       },
       {
-        label: __('Last 60 Days'),
+        label: __('۶۰ روز گذشته'),
         onClick: () => {
-          preset.value = 'Last 60 Days'
+          preset.value = '۶۰ روز گذشته'
           filters.period = getLastXDays(60)
           dashboardItems.reload()
         },
       },
       {
-        label: __('Last 90 Days'),
+        label: __('۹۰ روز گذشته'),
         onClick: () => {
-          preset.value = 'Last 90 Days'
+          preset.value = '۹۰ روز گذشته'
           filters.period = getLastXDays(90)
           dashboardItems.reload()
         },
@@ -225,11 +226,11 @@ const options = computed(() => [
     ],
   },
   {
-    label: __('Custom Range'),
+    label: __('بازه سفارشی'),
     onClick: () => {
       showDatePicker.value = true
       setTimeout(() => datePickerRef.value?.open(), 0)
-      preset.value = 'Custom Range'
+      preset.value = 'بازه سفارشی'
       filters.period = null // Reset period to allow custom date selection
     },
   },
@@ -304,6 +305,6 @@ function resetToDefault() {
 }
 
 usePageMeta(() => {
-  return { title: __('CRM Dashboard') }
+  return { title: __('داشبورد مدیریت') }
 })
 </script>
