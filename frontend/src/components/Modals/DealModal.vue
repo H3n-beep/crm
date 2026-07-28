@@ -1,7 +1,7 @@
 <template>
   <Dialog v-model:open="show" :size="'3xl'">
     <template #body>
-      <div class="bg-surface-elevation-1 px-4 pb-6 pt-5 sm:px-6">
+      <div class="bg-surface-elevation-1 px-4 pb-6 pt-5 sm:px-6" dir="rtl">
         <div class="mb-5 flex items-center justify-between">
           <div>
             <h3 class="text-3xl-semibold leading-6 text-ink-gray-9">
@@ -59,12 +59,17 @@
         </div>
       </div>
       <div class="px-4 pb-7 pt-4 sm:px-6">
-        <div class="flex flex-row-reverse gap-2">
+        <div class="flex flex-row-reverse gap-2 justify-start">
           <Button
             variant="solid"
             :label="__('Create')"
             :loading="isDealCreating"
             @click="createDeal"
+          />
+          <Button
+            variant="ghost"
+            :label="__('Cancel')"
+            @click="show = false"
           />
         </div>
       </div>

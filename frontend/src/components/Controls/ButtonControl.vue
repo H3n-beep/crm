@@ -5,6 +5,7 @@
     :variant="variant"
     :icon-left="lucide - icon"
     :disabled="disabled"
+    class="transition-all duration-200 ease-in-out"
     v-bind="$attrs"
     @click.stop="emit('click', $event)"
   />

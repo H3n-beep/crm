@@ -7,7 +7,7 @@
       :size="$attrs.size"
       :class="[
         $attrs.class,
-        showDropdown ? 'rounded-br-none rounded-tr-none' : '',
+        showDropdown ? 'rounded-bl-none rounded-tl-none' : '',
       ]"
       :iconLeft="activeButton.icon"
       @click="() => activeButton.onClick()"
@@ -22,7 +22,7 @@
         variant: $attrs.variant,
         size: $attrs.size,
         class:
-          '!w-6 justify-start rounded-bl-none rounded-tl-none border-0 pr-0 text-xs',
+          '!w-6 justify-start rounded-br-none rounded-tr-none border-0 ps-0 text-xs',
       }"
     />
   </div>

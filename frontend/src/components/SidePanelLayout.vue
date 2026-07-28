@@ -655,8 +655,20 @@ function isTextareaField(field) {
 :deep(.attach-control),
 :deep(.geolocation-control),
 .dropdown-button {
+  border-color: #CBD5E1;
+  background: #FFFFFF;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease-in-out;
+}
+
+:deep(.form-control input:not([type='checkbox']):focus),
+:deep(.form-control select:focus),
+:deep(.form-control button:focus),
+:deep(.attach-control:focus),
+:deep(.geolocation-control:focus) {
   border-color: transparent;
-  background: transparent;
+  ring: 2px;
+  ring-color: #6366F1;
 }
 
 /* The ghost variant renders inputs with border-0, whereas the Link, Select and
@@ -666,14 +678,13 @@ function isTextareaField(field) {
    intentionally excluded here and from the transparent overrides above.) */
 :deep(.form-control input:not([type='checkbox'])) {
   border-width: 1px;
-  border-color: transparent;
 }
 
 :deep(.form-control button) {
   gap: 0;
 }
 :deep(.form-control [type='checkbox']) {
-  margin-left: 9px;
+  margin-inline-start: 9px;
   cursor: pointer;
 }
 
@@ -692,8 +703,8 @@ function isTextareaField(field) {
    with px-2.5 (10px); trim to 9px so its text aligns with the inputs and
    Link fields, which start at 9px (1px transparent border + 8px padding). */
 :deep(.dropdown-button) {
-  padding-left: 9px !important;
-  padding-right: 9px !important;
+  padding-inline-start: 9px !important;
+  padding-inline-end: 9px !important;
 }
 
 .sections .section .column {

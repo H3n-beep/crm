@@ -79,7 +79,7 @@
         "
       >
         <template #prefix>
-          <LucideCalendar class="size-4 text-ink-gray-5 mr-2" />
+          <LucideCalendar class="size-4 text-ink-gray-5 ms-2" />
         </template>
       </DateRangePicker>
       <Link
@@ -99,13 +99,13 @@
         <template #prefix>
           <UserAvatar
             v-if="filters.user"
-            class="mr-2"
+            class="ms-2"
             :user="filters.user"
             size="sm"
           />
         </template>
         <template #item-prefix="{ option }">
-          <UserAvatar class="mr-2" :user="option.value" size="sm" />
+          <UserAvatar class="ms-2" :user="option.value" size="sm" />
         </template>
         <template #item-label="{ option }">
           <Tooltip :text="option.value">
