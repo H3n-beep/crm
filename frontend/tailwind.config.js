@@ -14,10 +14,23 @@ export default {
   safelist: [{ pattern: /!(text|bg)-/, variants: ['hover', 'active'] }],
   theme: {
     extend: {
+      // Akolade Brand Colors
+      colors: {
+        akolade: {
+          primary: '#0F172A',   // Deep Slate
+          accent: '#6366F1',    // Vibrant Indigo
+          bg: '#F8FAFC',        // Light Background
+          surface: '#FFFFFF',   // White Surface
+        }
+      },
       // Ensure Vazirmatn font is available for Tailwind classes
       fontFamily: {
-        sans: ['Vazirmatn', 'sans-serif'],
+        sans: ['Vazirmatn', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
+      // Optional: Slightly tighter radii for a more technical "CRM" feel
+      borderRadius: {
+        'akolade': '0.375rem', 
+      }
     },
   },
   plugins: [],
